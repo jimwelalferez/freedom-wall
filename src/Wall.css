@@ -1,0 +1,145 @@
+/* Wall.css */
+.wall-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wall-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.wall-header h1 {
+  color: #4a6baf;
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.wall-header p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.post-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  width: 100%;
+  max-width: 600px;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: slideUp 0.5s ease-out;
+}
+
+.post-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.15);
+}
+
+.post-card.placeholder {
+  background: #f8f9fa;
+  color: #6c757d;
+  font-style: italic;
+}
+
+.post-content {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  word-break: break-word;
+}
+
+.post-footer {
+  border-top: 1px solid #eee;
+  padding-top: 1rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.wall-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.post-button, .refresh-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 50px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.post-button {
+  background: #4a6baf;
+  color: white;
+}
+
+.refresh-button {
+  background: #f8f9fa;
+  color: #4a6baf;
+  border: 1px solid #4a6baf;
+}
+
+.post-button:hover {
+  background: #3a5a9f;
+  transform: translateY(-2px);
+}
+
+.refresh-button:hover {
+  background: #e9ecef;
+  transform: translateY(-2px);
+}
+
+.wall-footer {
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+  margin-top: auto;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to { 
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .wall-header h1 {
+    font-size: 2rem;
+  }
+  
+  .post-card {
+    padding: 1.5rem;
+  }
+  
+  .wall-actions {
+    flex-direction: column;
+  }
+}
